@@ -1,0 +1,5 @@
+flutter_native_splash:
+  color: "#42a5f5"  # required parameter
+  image: assets/images/the-battle-logo.png  # optional parameter
+  color_dark: "#042a49"  # required if image_dark parameter is used
+  image_dark: assets/images/the-battle-logo-white.png  # optional parameter
