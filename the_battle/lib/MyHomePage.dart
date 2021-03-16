@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import "pages/AllCharactersPage.dart";
+//import "pages/AllCharactersPage.dart";
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -21,5 +21,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
-  Widget build(BuildContext context) {}
+  Widget build(BuildContext context) {
+    return null;
+  }
 }
