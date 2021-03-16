@@ -47,6 +47,12 @@ class _TeamPageState extends State<TeamPage> {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             //Visibility(visible: selectedCharacter != null, child: this.details),
+            Container(
+              height: 100.0,
+              child: Text("Encore " +
+                  (5 - this.player.team.characters.length).toString() +
+                  " personnages à selectionner"),
+            ),
             CharacterTeamMaster(this.player.team.characters, this.onListEvent),
             ChangePageWidget()
           ],

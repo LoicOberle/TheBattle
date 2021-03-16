@@ -21,12 +21,11 @@ class _AllCharactersPageState extends State<AllCharactersPage> {
   Player player;
   Character selectedCharacter;
   List<Widget> enfants;
-  CharacterDetails details;
+
   _AllCharactersPageState(p) {
     this.player = p;
-    this.details = new CharacterDetails(selectedCharacter);
+    this.selectedCharacter = CharactersData.characters[0];
   }
-  @override
   void onListEvent(Character c) {
     setState(() {
       this.selectedCharacter = c;
@@ -41,15 +40,11 @@ class _AllCharactersPageState extends State<AllCharactersPage> {
           //c.selected = true;
         }
       }
-      this.details = new CharacterDetails(selectedCharacter);
-      // print(this.selectedCharacter.name);
-      //this.details.createState();
     });
-
-    //rint(c.cleverness.value.toString());
   }
 
   Widget build(BuildContext context) {
+    print(this.selectedCharacter.name);
     return Scaffold(
       backgroundColor: Colors.red,
       appBar: AppBar(
@@ -65,7 +60,7 @@ class _AllCharactersPageState extends State<AllCharactersPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Visibility(visible: selectedCharacter != null, child: this.details),
+            CharacterDetails(this.selectedCharacter),
             CharacterMaster(CharactersData.characters, this.onListEvent),
             ChangePageWidget()
           ],
