@@ -24,27 +24,16 @@ class _AllCharactersPageState extends State<AllCharactersPage> {
 
   _AllCharactersPageState(p) {
     this.player = p;
-    this.selectedCharacter = CharactersData.characters[0];
+    // this.selectedCharacter = CharactersData.characters[0];
   }
   void onListEvent(Character c) {
     setState(() {
       this.selectedCharacter = c;
-      if (c.selected) {
-        if (!c.autoSelected) {
-          if (this.player.team.removeCharacter(c)) {
-            //c.selected = false;
-          }
-        }
-      } else {
-        if (this.player.team.addCharacter(c)) {
-          //c.selected = true;
-        }
-      }
     });
   }
 
   Widget build(BuildContext context) {
-    print(this.selectedCharacter.name);
+    // print(this.selectedCharacter.name);
     return Scaffold(
       backgroundColor: Colors.red,
       appBar: AppBar(
@@ -60,8 +49,15 @@ class _AllCharactersPageState extends State<AllCharactersPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            CharacterDetails(this.selectedCharacter),
-            CharacterMaster(CharactersData.characters, this.onListEvent),
+            Container(
+              child: Column(
+                children: [
+                  if (this.selectedCharacter != null)
+                    CharacterDetails(this.player, this.selectedCharacter),
+                  CharacterMaster(CharactersData.characters, this.onListEvent),
+                ],
+              ),
+            ),
             ChangePageWidget()
           ],
         ),

@@ -29,6 +29,12 @@ class _TeamPageState extends State<TeamPage> {
   _TeamPageState(Player p) {
     this.player = p;
   }
+  validateTeam() {
+    setState(() {
+      this.player.team.validated = true;
+      Navigator.pushNamed(context, "/team-custom");
+    });
+  }
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,9 +55,20 @@ class _TeamPageState extends State<TeamPage> {
             //Visibility(visible: selectedCharacter != null, child: this.details),
             Container(
               height: 100.0,
-              child: Text("Encore " +
-                  (5 - this.player.team.characters.length).toString() +
-                  " personnages à selectionner"),
+              child: Column(
+                children: [
+                  Text("Encore " +
+                      (5 - this.player.team.characters.length).toString() +
+                      " personnages à selectionner"),
+                  Visibility(
+                    visible: this.player.team.characters.length >= 5,
+                    child: RaisedButton(
+                      child: Text("Confirm Team"),
+                      onPressed: validateTeam,
+                    ),
+                  )
+                ],
+              ),
             ),
             CharacterTeamMaster(this.player.team.characters, this.onListEvent),
             ChangePageWidget()

@@ -8,6 +8,7 @@ class Team {
   Player player;
   List<Character> characters;
   String name;
+  bool validated = false;
   Team(n) {
     this.name = n;
     this.characters = [];

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:the_battle/data/characters.dart';
+import 'package:the_battle/pages/TeamCustomPage.dart';
 import 'models/Player.dart';
 import 'pages/AllCharactersPage.dart';
 import 'pages/TeamPage.dart';
@@ -20,7 +21,8 @@ class _TheBattleAppState extends State<TheBattleApp> {
       navigatorObservers: [routeObserver],
       routes: {
         "/": (context) => AllCharactersPage(_player),
-        "/team": (context) => TeamPage(_player)
+        "/team": (context) => TeamPage(_player),
+        "/team-custom": (context) => TeamCustomPage(_player)
       },
       title: 'Flutter Demo',
       theme: ThemeData(

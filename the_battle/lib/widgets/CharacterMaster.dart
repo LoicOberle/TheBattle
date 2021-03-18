@@ -19,7 +19,7 @@ class CharacterMaster extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 450,
+        height: 400,
         child: ListView.builder(
             itemCount: characters.length,
             itemBuilder: (BuildContext context, int index) {
