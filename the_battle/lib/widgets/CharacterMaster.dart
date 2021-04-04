@@ -12,8 +12,6 @@ class CharacterMaster extends StatelessWidget {
   }
   void onElementEvent(Character c) {
     this.callback(c);
-
-    //print(c.cleverness.value.toString());
   }
 
   @override

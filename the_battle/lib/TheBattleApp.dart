@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:the_battle/data/characters.dart';
+import 'package:the_battle/data/shieldicons.dart';
 import 'package:the_battle/pages/TeamCustomPage.dart';
+import 'data/shields.dart';
 import 'models/Player.dart';
 import 'pages/AllCharactersPage.dart';
 import 'pages/TeamPage.dart';
@@ -14,9 +16,13 @@ class TheBattleApp extends StatefulWidget {
 class _TheBattleAppState extends State<TheBattleApp> {
   @override
   final CharactersData data = new CharactersData();
+  final Shields dataS = new Shields();
+  final ShieldIcons dataSI = new ShieldIcons();
+
   final Player _player = new Player("uuid", "John", "Doe", "john@doe.com", 1);
   final RouteObserver<PageRoute> routeObserver = RouteObserver<PageRoute>();
   Widget build(BuildContext context) {
+    print(ShieldIcons.shieldicons.length);
     return MaterialApp(
       navigatorObservers: [routeObserver],
       routes: {

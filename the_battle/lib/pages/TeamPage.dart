@@ -32,7 +32,7 @@ class _TeamPageState extends State<TeamPage> {
   validateTeam() {
     setState(() {
       this.player.team.validated = true;
-      Navigator.pushNamed(context, "/team-custom");
+      Navigator.pushReplacementNamed(context, "/team-custom");
     });
   }
 

@@ -1,3 +1,5 @@
+import 'package:the_battle/models/Shield.dart';
+
 import "Player.dart";
 import "Character.dart";
 import '../data/characters.dart';
@@ -9,6 +11,7 @@ class Team {
   List<Character> characters;
   String name;
   bool validated = false;
+  Shield shield;
   Team(n) {
     this.name = n;
     this.characters = [];
